@@ -1,5 +1,6 @@
-import moment from 'moment';
 import * as urijs from 'urijs';
+
+import moment from 'moment';
 
 export const COMPLIANCE_FETCH = 'COMPLIANCE_SUMMARY_FETCH';
 export const CRITICAL_VULNERABILITIES_FETCH = 'CRITICAL_VULNERABILITIES_FETCH';

@@ -1,18 +1,20 @@
 /* eslint-disable no-console */
 import './_dashboard.scss';
+
 import { Card } from '@patternfly/react-core/dist/js/components/Card/Card';
-import { CardHeader } from '@patternfly/react-core/dist/js/components/Card/CardHeader';
 import { CardBody } from '@patternfly/react-core/dist/js/components/Card/CardBody';
+import { CardHeader } from '@patternfly/react-core/dist/js/components/Card/CardHeader';
 import { Divider } from '@patternfly/react-core/dist/js/components/Divider/Divider';
-import { PageSection } from '@patternfly/react-core/dist/js/components/Page/PageSection';
-import { Title } from '@patternfly/react-core/dist/js/components/Title/Title';
 import { Main } from '@red-hat-insights/insights-frontend-components/components/Main';
+import { PageSection } from '@patternfly/react-core/dist/js/components/Page/PageSection';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Title } from '@patternfly/react-core/dist/js/components/Title/Title';
 import asyncComponent from '../../Utilities/skeletonAsyncCard';
 import { injectIntl } from 'react-intl';
 import messages from '../../Messages';
 
+const AdvisorCard = asyncComponent(() => import('../../SmartComponents/Advisor/Advisor'));
 const ComplianceCard = asyncComponent(() => import('../../SmartComponents/Compliance/ComplianceCard'));
 const VulnerabilityCard = asyncComponent(() => import('../../SmartComponents/Vulnerability/VulnerabilityCard'));
 
@@ -60,20 +62,13 @@ const Dashboard = ({ intl }) =>
                 </div>
             </div>
             <div className="dashboard-card-rules">
-                <Card>
-                    <CardHeader>
-                        Rules
-                    </CardHeader>
-                    <CardBody>
-                        Here is a lot of test content to see how the card behaves. Here is a lot of test content to see how the card behaves.
-                    </CardBody>
-                </Card>
+                <AdvisorCard />
             </div>
             <div className="dashboard-card-vulnerabilities">
-                <VulnerabilityCard/>
+                <VulnerabilityCard />
             </div>
             <div className="dashboard-card-compliance-remediations">
-                <ComplianceCard/>
+                <ComplianceCard />
                 <Divider></Divider>
                 <Card>
                     <CardHeader>
